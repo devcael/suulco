@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Micael\\\\repos\\\\suulco\\\\src\\\\core\\\\services\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Micael\\\\repos\\\\suulco\" -Recurse -Filter \"*.vue\")",
+      "Bash(Select-Object -ExpandProperty FullName)"
+    ]
+  }
+}

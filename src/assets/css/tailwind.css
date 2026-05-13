@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0eae0;
+  --background-subtle: #e8e0d3;
+  --background-muted: #ddd4c4;
+
+  --text-default: #2b2620;
+  --text-secondary: #7a6e64;
+  --text-subtle: #8a7e72;
+  --text-disabled: #d8d3ca;
+
+  --border: rgba(90, 80, 65, 0.18);
+  --border-strong: rgba(90, 80, 65, 0.28);
+
+  --accent: #9e7b5a;
+  --accent-text: #9e7b5a;
+  --accent-border: #9e7b5a;
+  --accent-background: #ede4d8;
+
+  --positive: #6b7357;
+  --positive-text: #6b7357;
+  --positive-background: rgba(107, 115, 87, 0.12);
+
+  --danger: #9e4030;
+  --danger-border: rgba(150, 60, 40, 0.3);
+
+  --interactive-default: #2b2620;
+  --interactive-text: #f0eae0;
+  --interactive-hover: 0.78;
+
+  --surface: #f0eae0;
+  --surface-overlay: rgba(43, 38, 32, 0.45);
+
+  --font-display: "Courier Prime", monospace;
+  --font-body: "Courier Prime", monospace;
+
+  --text-xs: 10px;
+  --text-sm: 11px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 21px;
+  --text-3xl: 22px;
+  --text-logo: 52px;
+
+  --leading-tight: 1.35;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  --tracking-tight: -0.04em;
+  --tracking-wide: 0.1em;
+  --tracking-wider: 0.14em;
+  --tracking-widest: 0.18em;
+
+  --space-page-x: 36px;
+  --space-page-y: 48px;
+  --space-item-y: 18px;
+  --space-gap-sm: 6px;
+  --space-gap-md: 14px;
+  --space-gap-lg: 28px;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 6px;
+
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --ease-default: ease;
+}
+
+@theme {
+  --color-bg: #f0eae0;
+  --color-bg-subtle: #e8e0d3;
+  --color-bg-muted: #ddd4c4;
+
+  --color-fg: #2b2620;
+  --color-fg-secondary: #7a6e64;
+  --color-fg-subtle: #8a7e72;
+  --color-fg-disabled: #d8d3ca;
+
+  --color-line: rgba(90, 80, 65, 0.18);
+  --color-line-strong: rgba(90, 80, 65, 0.28);
+
+  --color-accent: #9e7b5a;
+  --color-accent-bg: #ede4d8;
+
+  --color-positive: #6b7357;
+  --color-positive-bg: rgba(107, 115, 87, 0.12);
+
+  --color-danger: #9e4030;
+  --color-danger-border: rgba(150, 60, 40, 0.3);
+
+  --color-interactive: #2b2620;
+  --color-interactive-fg: #f0eae0;
+
+  --color-overlay: rgba(43, 38, 32, 0.45);
+
+  --font-display: "Courier Prime", monospace;
+  --font-body: "Courier Prime", monospace;
+
+  --text-xs: 10px;
+  --text-sm: 11px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 21px;
+  --text-3xl: 22px;
+  --text-logo: 52px;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 6px;
+
+  --spacing-page-x: 36px;
+  --spacing-page-y: 48px;
+  --spacing-item-y: 18px;
+  --spacing-gap-sm: 6px;
+  --spacing-gap-md: 14px;
+  --spacing-gap-lg: 28px;
+}
