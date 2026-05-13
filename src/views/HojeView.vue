@@ -6,6 +6,7 @@ import type { HojeItem, HojeSummary } from "../core/models";
 const hojeService = inject<IHojeService>("hojeService")!;
 
 const items = ref<HojeItem[]>([]);
+
 const summary = ref<HojeSummary>({ total: 0, pending: 0, done: 0 });
 
 const emit = defineEmits<{

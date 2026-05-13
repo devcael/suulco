@@ -3,6 +3,7 @@ import { ref, inject, computed, watch, onMounted, onUnmounted } from "vue";
 import type { IInputService, InputDestination, CreateItemOptions } from "../core/services/input_service";
 import type { ISulcoService } from "../core/services/sulco_service";
 import type { SulcoListItem } from "../core/models";
+import SegmentedButton from "./SegmentedButton.vue";
 
 const inputService = inject<IInputService>("inputService")!;
 const sulcoService = inject<ISulcoService>("sulcoService")!;
@@ -110,7 +111,7 @@ function onKeydown(e: KeyboardEvent) {
   <div class="px-spacing-page-x pt-4 pb-9 border-t border-line bg-bg">
     <div class="flex items-center justify-between mb-2.5">
       <div class="flex gap-1.5">
-        <button
+        <SegmentedButton
           v-for="t in targets"
           :key="t.key"
           class="text-xs px-[11px] py-1 rounded-sm border font-body tracking-wide transition-all duration-150 cursor-pointer"
@@ -120,7 +121,7 @@ function onKeydown(e: KeyboardEvent) {
           @click="setTarget(t.key)"
         >
           {{ t.label }}
-        </button>
+        </SegmentedButton>
       </div>
 
       <div v-if="showSulcoSelect" class="relative" ref="sulcoDropdownRef">
