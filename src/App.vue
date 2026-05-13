@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref, inject } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { useRouter } from "vue-router";
 import type { ISulcoService } from "./core/services/sulco_service";
 import type { IHojeService } from "./core/services/hoje_service";
-import type { IMemoriaService } from "./core/services/memoria_service";
 import type { InputDestination } from "./core/services/input_service";
 import InputBar from "./components/InputBar.vue";
 import MemoriaEditorModal from "./components/MemoriaEditorModal.vue";
@@ -14,16 +13,15 @@ import EditModal from "./components/modals/EditModal.vue";
 
 const sulcoService = inject<ISulcoService>("sulcoService")!;
 const hojeService = inject<IHojeService>("hojeService")!;
-const memoriaService = inject<IMemoriaService>("memoriaService")!;
 
 const router = useRouter();
-const route = useRoute();
 
 const tabs = ["sulco", "hoje", "inbox", "memoria"] as const;
 
+//@ts-nocheck
 const currentView = ref<any>(null);
 
-const memoriaEditorOpen = ref(false);
+const memoriaEditorOpen = ref<boolean>(false);
 const memoriaEditItem = ref<{ id: number; text: string } | null>(null);
 const linkModalTaskId = ref<number | null>(null);
 const catModalItemId = ref<number | null>(null);

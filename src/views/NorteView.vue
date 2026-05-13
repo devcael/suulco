@@ -188,20 +188,24 @@ onMounted(load);
 
       <div
         v-if="showArchived"
-        v-for="item in archivedItems"
-        :key="item.id"
-        class="py-3.5 border-b border-line flex items-center justify-between gap-3"
-      >
-        <span class="font-display text-xl text-fg-subtle flex-1">{{
-          item.text
-        }}</span>
-        <button
-          class="text-xs text-accent bg-transparent border-none cursor-pointer tracking-wide font-body"
-          @click="restore(item.id)"
         >
-          restaurar
-        </button>
+        <div
+          v-for="item in archivedItems"
+          :key="item.id"
+          class="py-3.5 border-b border-line flex items-center justify-between gap-3"
+        >
+          <span class="font-display text-xl text-fg-subtle flex-1">{{
+            item.text
+          }}</span>
+          <button
+            class="text-xs text-accent bg-transparent border-none cursor-pointer tracking-wide font-body"
+            @click="restore(item.id)"
+          >
+            restaurar
+          </button>
+        </div>
       </div>
+
     </template>
   </div>
 </template>
