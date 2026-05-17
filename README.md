@@ -1,6 +1,8 @@
 # suulco
 
-Sua fonte da verdade. App de produtividade pessoal com foco em intenção diária, inbox e memória.
+O cérebro funciona por repetição. Quanto mais você revisita um objetivo, mais o caminho até ele vai sendo pavimentado — conexões se formam, padrões emergem, a direção fica clara.
+
+Suulco é construído em cima dessa ideia. Não é sobre microgerenciar o seu tempo ou manter listas perfeitas. É sobre te ajudar a chegar onde você quer chegar, mantendo seus objetivos vivos e presentes no dia a dia.
 
 ## Instalar
 
