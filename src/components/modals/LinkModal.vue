@@ -41,7 +41,7 @@ onMounted(load);
       @click.stop
     >
       <div class="font-display text-[20px] text-fg mb-1.5">vincular ao sulco</div>
-      <div class="text-[12px] text-fg-subtle tracking-wide mb-[22px] leading-normal">
+      <div class="text-[12px] text-fg-subtle mb-[22px] ">
         qual intenção essa task serve?
       </div>
 
@@ -69,7 +69,7 @@ onMounted(load);
       </div>
 
       <button
-        class="mt-5 w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] tracking-wide cursor-pointer"
+        class="mt-5 w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] cursor-pointer"
         @click="emit('close')"
       >
         cancelar

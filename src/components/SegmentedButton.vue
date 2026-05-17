@@ -1,6 +1,6 @@
 <template>
   <button
-    class="text-xs px-[11px] py-1 rounded-sm border font-body tracking-wide transition-all duration-150 cursor-pointer"
+    class="text-xs px-[11px] py-1 rounded-sm border font-body transition-all duration-150 cursor-pointer"
     :class="active
       ? 'bg-interactive text-interactive-fg border-interactive'
       : 'bg-transparent text-fg-subtle border-line'"

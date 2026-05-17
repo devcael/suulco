@@ -49,7 +49,7 @@ onMounted(load);
       @click.stop
     >
       <div class="font-display text-[20px] text-fg mb-1.5">categorizar</div>
-      <div class="text-[12px] text-fg-subtle tracking-wide mb-[22px] leading-normal">
+      <div class="text-[12px] text-fg-subtle mb-[22px] ">
         escolha ou crie uma categoria
       </div>
 
@@ -76,13 +76,13 @@ onMounted(load);
           @keydown.enter="createAndApply"
         />
         <button
-          class="w-full py-3 rounded-md border-none bg-interactive text-interactive-fg font-body text-[12px] tracking-wide cursor-pointer mb-2"
+          class="w-full py-3 rounded-md border-none bg-interactive text-interactive-fg font-body text-[12px] cursor-pointer mb-2"
           @click="createAndApply"
         >
           criar e aplicar
         </button>
         <button
-          class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] tracking-wide cursor-pointer"
+          class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] cursor-pointer"
           @click="emit('close')"
         >
           cancelar

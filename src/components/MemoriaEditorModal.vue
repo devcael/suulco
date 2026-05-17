@@ -79,7 +79,7 @@ async function save() {
         </svg>
       </button>
 
-      <span class="font-body text-sm text-fg-subtle tracking-wider shrink-0">
+      <span class="font-body text-sm text-fg-subtle shrink-0">
         {{ editItem ? "editar anotação" : "nova anotação" }}
       </span>
 
@@ -87,7 +87,7 @@ async function save() {
         <button
           v-for="cat in categories"
           :key="cat.name"
-          class="text-xs px-[11px] py-1 rounded-sm border font-body tracking-wide transition-all duration-150 cursor-pointer"
+          class="text-xs px-[11px] py-1 rounded-sm border font-body transition-all duration-150 cursor-pointer"
           :class="selectedCategory === cat.name
             ? 'bg-accent border-accent text-interactive-fg'
             : 'bg-transparent text-fg-subtle border-line hover:border-fg-subtle'"
@@ -99,7 +99,7 @@ async function save() {
 
       <div class="ml-auto">
         <button
-          class="text-xs px-[11px] py-1 rounded-sm border font-body tracking-wide transition-all duration-150 cursor-pointer bg-interactive text-interactive-fg border-interactive hover:opacity-[0.85] disabled:opacity-40"
+          class="text-xs px-[11px] py-1 rounded-sm border font-body transition-all duration-150 cursor-pointer bg-interactive text-interactive-fg border-interactive hover:opacity-[0.85] disabled:opacity-40"
           :disabled="!text.trim()"
           @click="save"
           title="salvar (Ctrl+S)"
@@ -110,7 +110,7 @@ async function save() {
     </div>
 
     <textarea
-      class="flex-1 w-full bg-transparent border-none outline-none resize-none font-body text-base text-fg px-6 py-5 leading-relaxed placeholder:text-fg-subtle placeholder:italic"
+      class="flex-1 w-full bg-transparent border-none outline-none resize-none font-body text-base text-fg px-6 py-5 placeholder:text-fg-subtle placeholder:italic"
       v-model="text"
       :placeholder="editItem ? '' : 'escreva em markdown...'"
       autofocus

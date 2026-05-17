@@ -5,6 +5,7 @@ use tauri::{AppHandle, Manager};
 
 pub struct AppState {
     pub db: Mutex<Connection>,
+    pub db_path: PathBuf,
 }
 
 const MIGRATIONS: &[(&str, &str)] = &[
@@ -17,9 +18,10 @@ pub fn init(app: &AppHandle) -> Result<(), Box<dyn std::error::Error>> {
         .path()
         .app_data_dir()
         .expect("Failed to get app data dir");
-    std::fs::create_dir_all(&app_data_dir).ok();
+    let db_dir = app_data_dir.join("db");
+    std::fs::create_dir_all(&db_dir).ok();
 
-    let db_path = app_data_dir.join("suulco.sqlite");
+    let db_path = db_dir.join("suulco.sqlite");
     let conn = Connection::open(&db_path)?;
 
     conn.execute_batch("PRAGMA journal_mode=WAL;")?;
@@ -29,6 +31,7 @@ pub fn init(app: &AppHandle) -> Result<(), Box<dyn std::error::Error>> {
 
     app.manage(AppState {
         db: Mutex::new(conn),
+        db_path,
     });
 
     Ok(())

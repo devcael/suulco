@@ -52,26 +52,26 @@ function onKeydown(e: KeyboardEvent) {
       @click.stop
     >
       <div class="font-display text-[20px] text-fg mb-1.5">{{ title }}</div>
-      <div class="text-[12px] text-fg-subtle tracking-wide mb-[22px] leading-normal">
+      <div class="text-[12px] text-fg-subtle mb-[22px] ">
         edite o texto e confirme
       </div>
 
       <textarea
         ref="inputRef"
-        class="w-full bg-bg-subtle border border-line rounded-md px-3.5 py-[11px] font-display text-lg text-fg outline-none mb-3 transition-[border-color] duration-200 focus:border-accent resize-none min-h-[80px] leading-[1.65]"
+        class="w-full bg-bg-subtle border border-line rounded-md px-3.5 py-[11px] font-display text-lg text-fg outline-none mb-3 transition-[border-color] duration-200 focus:border-accent resize-none min-h-[80px] "
         v-model="text"
         @keydown="onKeydown"
         rows="3"
       />
 
       <button
-        class="w-full py-3 rounded-md border-none bg-interactive text-interactive-fg font-body text-[12px] tracking-wide cursor-pointer mb-2"
+        class="w-full py-3 rounded-md border-none bg-interactive text-interactive-fg font-body text-[12px] cursor-pointer mb-2"
         @click="save"
       >
         salvar
       </button>
       <button
-        class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] tracking-wide cursor-pointer"
+        class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] cursor-pointer"
         @click="emit('close')"
       >
         cancelar

@@ -1,39 +1,53 @@
 @import "tailwindcss";
 
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+  body {
+    font-family: "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 :root {
-  --background: #f0eae0;
-  --background-subtle: #e8e0d3;
-  --background-muted: #ddd4c4;
+  --background: #f7faf8;
+  --background-subtle: #f1f5f2;
+  --background-muted: #fbfcfb;
 
-  --text-default: #2b2620;
-  --text-secondary: #7a6e64;
-  --text-subtle: #8a7e72;
-  --text-disabled: #d8d3ca;
+  --text-default: #1a1a1a;
+  --text-secondary: #2a2a2a;
+  --text-subtle: #4a4a4a;
+  --text-muted: #707070;
+  --text-disabled: #adadad;
 
-  --border: rgba(90, 80, 65, 0.18);
-  --border-strong: rgba(90, 80, 65, 0.28);
+  --border: #e1e9e4;
+  --border-strong: #c8d4ce;
 
-  --accent: #9e7b5a;
-  --accent-text: #9e7b5a;
-  --accent-border: #9e7b5a;
-  --accent-background: #ede4d8;
+  --accent: #598d6c;
+  --accent-sec: #8ab59a;
+  --accent-third: #99c1a5;
+  --accent-background: #e8f3ec;
 
-  --positive: #6b7357;
-  --positive-text: #6b7357;
-  --positive-background: rgba(107, 115, 87, 0.12);
+  --positive: #598d6c;
+  --positive-text: #598d6c;
+  --positive-background: rgba(89, 141, 108, 0.1);
 
   --danger: #9e4030;
   --danger-border: rgba(150, 60, 40, 0.3);
 
-  --interactive-default: #2b2620;
-  --interactive-text: #f0eae0;
+  --interactive-default: #081f13;
+  --interactive-text: #f7faf8;
   --interactive-hover: 0.78;
 
-  --surface: #f0eae0;
-  --surface-overlay: rgba(43, 38, 32, 0.45);
+  --surface: #f7faf8;
+  --surface-overlay: rgba(8, 31, 19, 0.5);
 
-  --font-display: "Courier Prime", monospace;
-  --font-body: "Courier Prime", monospace;
+  --font-display: "Cal Sans", sans-serif;
+  --font-body: "Lato", sans-serif;
 
   --text-xs: 10px;
   --text-sm: 11px;
@@ -71,34 +85,37 @@
 }
 
 @theme {
-  --color-bg: #f0eae0;
-  --color-bg-subtle: #e8e0d3;
-  --color-bg-muted: #ddd4c4;
+  --color-bg: #fbfcfb;
+  --color-bg-subtle: #f1f5f2;
+  --color-bg-muted: #fbfcfb;
 
-  --color-fg: #2b2620;
-  --color-fg-secondary: #7a6e64;
-  --color-fg-subtle: #8a7e72;
-  --color-fg-disabled: #d8d3ca;
+  --color-fg: #1a1a1a;
+  --color-fg-secondary: #2a2a2a;
+  --color-fg-subtle: #4a4a4a;
+  --color-fg-muted: #707070;
+  --color-fg-disabled: #adadad;
 
-  --color-line: rgba(90, 80, 65, 0.18);
-  --color-line-strong: rgba(90, 80, 65, 0.28);
+  --color-line: #e1e9e4;
+  --color-line-strong: #c8d4ce;
 
-  --color-accent: #9e7b5a;
-  --color-accent-bg: #ede4d8;
+  --color-accent: #598d6c;
+  --color-accent-sec: #8ab59a;
+  --color-accent-third: #99c1a5;
+  --color-accent-bg: #e8f3ec;
 
-  --color-positive: #6b7357;
-  --color-positive-bg: rgba(107, 115, 87, 0.12);
+  --color-positive: #598d6c;
+  --color-positive-bg: rgba(89, 141, 108, 0.1);
 
   --color-danger: #9e4030;
   --color-danger-border: rgba(150, 60, 40, 0.3);
 
-  --color-interactive: #2b2620;
-  --color-interactive-fg: #f0eae0;
+  --color-interactive: #081f13;
+  --color-interactive-fg: #f7faf8;
 
-  --color-overlay: rgba(43, 38, 32, 0.45);
+  --color-overlay: rgba(8, 31, 19, 0.5);
 
-  --font-display: "Courier Prime", monospace;
-  --font-body: "Courier Prime", monospace;
+  --font-display: "Cal Sans", sans-serif;
+  --font-body: "Lato", sans-serif;
 
   --text-xs: 10px;
   --text-sm: 11px;

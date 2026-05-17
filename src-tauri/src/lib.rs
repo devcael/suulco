@@ -46,6 +46,8 @@ pub fn run() {
             services::memoria::update_memoria_text,
             // input
             services::input::create_global_item,
+            // settings
+            services::settings::get_db_path,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

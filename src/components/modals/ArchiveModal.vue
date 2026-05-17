@@ -31,18 +31,18 @@ async function confirm() {
       @click.stop
     >
       <div class="font-display text-[20px] text-fg mb-1.5">arquivar intenção</div>
-      <div class="text-[12px] text-fg-subtle tracking-wide mb-7 leading-normal">
+      <div class="text-[12px] text-fg-subtle mb-7 ">
         "{{ sulcoText }}" vai para os arquivados. você pode restaurar quando quiser.
       </div>
 
       <button
-        class="w-full py-3 rounded-md border border-danger-border bg-transparent text-danger font-body text-[12px] tracking-wide cursor-pointer mb-2"
+        class="w-full py-3 rounded-md border border-danger-border bg-transparent text-danger font-body text-[12px] cursor-pointer mb-2"
         @click="confirm"
       >
         sim, arquivar
       </button>
       <button
-        class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] tracking-wide cursor-pointer"
+        class="w-full py-[11px] rounded-md border border-line bg-transparent text-fg-subtle font-body text-[12px] cursor-pointer"
         @click="emit('close')"
       >
         cancelar
