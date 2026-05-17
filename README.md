@@ -1,6 +1,6 @@
 # suulco
 
-O cérebro funciona por repetição. Quanto mais você revisita um objetivo, mais o caminho até ele vai sendo pavimentado — conexões se formam, padrões emergem, a direção fica clara.
+O cérebro funciona por repetição. Quanto mais você revisita um objetivo, mais o caminho até ele vai sendo pavimentado conexões se formam, padrões aparecem e a direção fica clara.
 
 Suulco é construído em cima dessa ideia. Não é sobre microgerenciar o seu tempo ou manter listas perfeitas. É sobre te ajudar a chegar onde você quer chegar, mantendo seus objetivos vivos e presentes no dia a dia.
 
@@ -11,19 +11,27 @@ Baixe o instalador mais recente na [página de releases](../../releases/latest):
 | Sistema | Arquivo |
 |---------|---------|
 | Windows | `.msi` ou `.exe` |
-| Linux   | `.deb` (Debian/Ubuntu) ou `.AppImage` |
+| Debian / Ubuntu | `.deb` |
+| Arch Linux | `.AppImage` |
+| Qualquer Linux | `.AppImage` |
 
-### Linux (.deb)
-
-```bash
-sudo dpkg -i suulco_*.deb
-```
-
-### Linux (AppImage)
+### Arch Linux / qualquer distro (AppImage)
 
 ```bash
 chmod +x suulco_*.AppImage
 ./suulco_*.AppImage
+```
+
+Para integrar ao sistema (launcher, menu de apps):
+
+```bash
+sudo mv suulco_*.AppImage /usr/local/bin/suulco
+```
+
+### Debian / Ubuntu (.deb)
+
+```bash
+sudo dpkg -i suulco_*.deb
 ```
 
 ### Windows
