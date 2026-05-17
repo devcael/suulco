@@ -1,7 +1,44 @@
-# Tauri + Vue + TypeScript
+# suulco
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Sua fonte da verdade. App de produtividade pessoal com foco em intenção diária, inbox e memória.
 
-## Recommended IDE Setup
+## Instalar
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Baixe o instalador mais recente na [página de releases](../../releases/latest):
+
+| Sistema | Arquivo |
+|---------|---------|
+| Windows | `.msi` ou `.exe` |
+| Linux   | `.deb` (Debian/Ubuntu) ou `.AppImage` |
+
+### Linux (.deb)
+
+```bash
+sudo dpkg -i suulco_*.deb
+```
+
+### Linux (AppImage)
+
+```bash
+chmod +x suulco_*.AppImage
+./suulco_*.AppImage
+```
+
+### Windows
+
+Execute o `.msi` ou `.exe` e siga o instalador.
+
+## Desenvolvimento
+
+Pré-requisitos: [Node.js 20+](https://nodejs.org), [Rust](https://rustup.rs), dependências do [Tauri](https://tauri.app/start/prerequisites/).
+
+```bash
+npm install
+npm run tauri dev
+```
+
+### Build
+
+```bash
+npm run tauri build
+```
