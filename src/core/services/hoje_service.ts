@@ -8,5 +8,6 @@ export interface IHojeService {
   linkTaskToSulco(taskId: number, sulcoId: number | null): Promise<void>;
   updateTaskText(id: number, text: string): Promise<void>;
   deferTaskToInbox(id: number): Promise<void>;
+  flushOverdueTasks(): Promise<void>;
   createTaskLinkedToSulco(text: string, sulcoId: number): Promise<void>;
 }

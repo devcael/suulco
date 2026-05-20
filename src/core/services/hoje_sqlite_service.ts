@@ -31,6 +31,10 @@ export class HojeSqliteService implements IHojeService {
     return invoke<void>("defer_task_to_inbox", { id });
   }
 
+  async flushOverdueTasks(): Promise<void> {
+    return invoke<void>("flush_overdue_tasks");
+  }
+
   async createTaskLinkedToSulco(text: string, sulcoId: number): Promise<void> {
     return invoke<void>("create_task_linked_to_sulco", { text, sulcoId });
   }

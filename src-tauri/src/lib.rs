@@ -27,6 +27,7 @@ pub fn run() {
             services::hoje::link_task_to_sulco,
             services::hoje::update_task_text,
             services::hoje::defer_task_to_inbox,
+            services::hoje::flush_overdue_tasks,
             services::hoje::create_task_linked_to_sulco,
             // inbox
             services::inbox::get_all_tasks,

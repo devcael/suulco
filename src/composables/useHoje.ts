@@ -43,7 +43,10 @@ export function useHoje() {
     await load();
   }
 
-  onMounted(load);
+  onMounted(async () => {
+    await hojeService.flushOverdueTasks();
+    await load();
+  });
 
   return {
     items,
