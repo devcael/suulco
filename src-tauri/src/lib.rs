@@ -45,6 +45,7 @@ pub fn run() {
             services::memoria::set_memoria_item_category,
             services::memoria::create_memoria_category,
             services::memoria::update_memoria_text,
+            services::memoria::update_memoria_title,
             // input
             services::input::create_global_item,
             // settings

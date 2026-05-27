@@ -109,6 +109,10 @@ async function save() {
       </div>
     </div>
 
+
+    <input
+    />
+
     <textarea
       class="flex-1 w-full bg-transparent border-none outline-none resize-none font-body text-base text-fg px-6 py-5 placeholder:text-fg-subtle placeholder:italic"
       v-model="text"
