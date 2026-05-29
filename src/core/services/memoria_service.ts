@@ -15,4 +15,5 @@ export interface IMemoriaService {
   setMemoriaItemCategory(id: number, category: string | null): Promise<void>;
   createMemoriaCategory(name: string): Promise<void>;
   updateMemoriaText(id: number, text: string): Promise<void>;
+  updateMemoriaTitle(id: number, title: string): Promise<void>;
 }

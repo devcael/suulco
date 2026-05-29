@@ -130,6 +130,17 @@ pub fn defer_task_to_inbox(state: State<AppState>, id: i32) -> Result<(), String
 }
 
 #[command]
+pub fn flush_overdue_tasks(state: State<AppState>) -> Result<(), String> {
+    let conn = state.db.lock().map_err(|e| e.to_string())?;
+    conn.execute(
+        "UPDATE hoje_items SET date = NULL WHERE date < date('now') AND done = 0",
+        [],
+    )
+    .map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+#[command]
 pub fn create_task_linked_to_sulco(state: State<AppState>, text: String, sulco_id: i32) -> Result<(), String> {
     let conn = state.db.lock().map_err(|e| e.to_string())?;
     conn.execute(

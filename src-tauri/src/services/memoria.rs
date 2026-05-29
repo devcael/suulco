@@ -6,6 +6,7 @@ use tauri::{command, State};
 #[serde(rename_all = "camelCase")]
 pub struct MemoriaItem {
     pub id: i32,
+    pub title: String,
     pub text: String,
     pub category: Option<String>,
     pub created_at: String,
@@ -15,6 +16,7 @@ pub struct MemoriaItem {
 #[serde(rename_all = "camelCase")]
 pub struct ResurfaceCard {
     pub id: i32,
+    pub title: String,
     pub text: String,
     pub created_at: String,
 }
@@ -42,11 +44,11 @@ pub fn get_memoria_items(
         let conn = state.db.lock().map_err(|e| e.to_string())?;
         let (query, params_vec): (String, Vec<String>) = match &category {
             Some(cat) => (
-                "SELECT id, text, category, created_at FROM memoria_items WHERE archived = 0 AND category = ?1 ORDER BY created_at DESC".to_string(),
+                "SELECT id, title, text, category, created_at FROM memoria_items WHERE archived = 0 AND category = ?1 ORDER BY created_at DESC".to_string(),
                 vec![cat.clone()],
             ),
             None => (
-                "SELECT id, text, category, created_at FROM memoria_items WHERE archived = 0 ORDER BY created_at DESC".to_string(),
+                "SELECT id, title, text, category, created_at FROM memoria_items WHERE archived = 0 ORDER BY created_at DESC".to_string(),
                 vec![],
             ),
         };
@@ -55,9 +57,10 @@ pub fn get_memoria_items(
             .query_map(rusqlite::params_from_iter(params_vec.iter()), |row| {
                 Ok(MemoriaItem {
                     id: row.get(0)?,
-                    text: row.get(1)?,
-                    category: row.get(2)?,
-                    created_at: row.get(3)?,
+                    title: row.get(1)?,
+                    text: row.get(2)?,
+                    category: row.get(3)?,
+                    created_at: row.get(4)?,
                 })
             })
             .map_err(|e| e.to_string())?
@@ -72,7 +75,7 @@ pub fn get_memoria_items(
 pub fn get_resurfaced_item(state: State<AppState>) -> Result<Option<ResurfaceCard>, String> {
     let conn = state.db.lock().map_err(|e| e.to_string())?;
     let result = conn.query_row(
-        "SELECT id, text, created_at FROM memoria_items
+        "SELECT id, title, text, created_at FROM memoria_items
          WHERE archived = 0
          ORDER BY COALESCE(resurfaced_at, created_at) ASC
          LIMIT 1",
@@ -80,8 +83,9 @@ pub fn get_resurfaced_item(state: State<AppState>) -> Result<Option<ResurfaceCar
         |row| {
             Ok(ResurfaceCard {
                 id: row.get(0)?,
-                text: row.get(1)?,
-                created_at: row.get(2)?,
+                title: row.get(1)?,
+                text: row.get(2)?,
+                created_at: row.get(3)?,
             })
         },
     );
@@ -204,6 +208,17 @@ pub fn update_memoria_text(state: State<AppState>, id: i32, text: String) -> Res
     conn.execute(
         "UPDATE memoria_items SET text = ?1 WHERE id = ?2",
         rusqlite::params![text, id],
+    )
+    .map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+#[command]
+pub fn update_memoria_title(state: State<AppState>, id: i32, title: String) -> Result<(), String> {
+    let conn = state.db.lock().map_err(|e| e.to_string())?;
+    conn.execute(
+        "UPDATE memoria_items SET title = ?1 WHERE id = ?2",
+        rusqlite::params![title, id],
     )
     .map_err(|e| e.to_string())?;
     Ok(())

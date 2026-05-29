@@ -35,7 +35,7 @@ function onSubmitted(dest: InputDestination) {
 <template>
   <div class="flex flex-col min-h-full">
     <div class="flex-1">
-      <div class="flex gap-1.5 pt-[18px] pb-2.5 flex-wrap">
+      <div class="flex gap-1.5 pt-item-y pb-2.5 flex-wrap">
         <button
           class="text-xs px-2.5 py-0.5 rounded-sm border font-body transition-all duration-150 cursor-pointer"
           :class="activeFilter === 'todos'
@@ -75,7 +75,7 @@ function onSubmitted(dest: InputDestination) {
           {{ formatResurfaceDate(resurface.createdAt) }}
         </div>
         <div class="font-display text-[17px] text-fg mb-4">
-          {{ resurface.text }}
+          {{ resurface.title }}
         </div>
         <div class="flex gap-2">
           <button

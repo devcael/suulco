@@ -11,6 +11,7 @@ pub struct AppState {
 const MIGRATIONS: &[(&str, &str)] = &[
     ("001_initial", include_str!("migration/001_initial.sql")),
     ("002_nullable_date", include_str!("migration/002_nullable_date.sql")),
+    ("003_memoria_items_title", include_str!("migration/003_memoria_items_title.sql"))
 ];
 
 pub fn init(app: &AppHandle) -> Result<(), Box<dyn std::error::Error>> {

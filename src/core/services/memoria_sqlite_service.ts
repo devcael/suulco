@@ -3,8 +3,9 @@ import type { IMemoriaService } from "./memoria_service";
 import type { MemoriaItem, ResurfaceCard, CategoryFilter, CategoryOption } from "../models";
 
 export class MemoriaSqliteService implements IMemoriaService {
+
   async getMemoriaItems(category?: string): Promise<MemoriaItem[]> {
-    const rawItems = await invoke<{ id: number; text: string; category: string | null; createdAt: string }[]>(
+    const rawItems = await invoke<{ id: number; title: string; text: string; category: string | null; createdAt: string }[]>(
       "get_memoria_items",
       { category: category ?? null }
     );
@@ -15,7 +16,7 @@ export class MemoriaSqliteService implements IMemoriaService {
   }
 
   async getResurfacedItem(): Promise<ResurfaceCard | null> {
-    const raw = await invoke<{ id: number; text: string; createdAt: string } | null>(
+    const raw = await invoke<{ id: number; title: string; text: string; createdAt: string } | null>(
       "get_resurfaced_item"
     );
     if (!raw) return null;
@@ -49,4 +50,9 @@ export class MemoriaSqliteService implements IMemoriaService {
   async updateMemoriaText(id: number, text: string): Promise<void> {
     return invoke<void>("update_memoria_text", { id, text });
   }
+
+  async updateMemoriaTitle(id: number, title: string): Promise<void> {
+    return invoke<void>("update_memoria_title", { id, title });
+  }
+
 }
