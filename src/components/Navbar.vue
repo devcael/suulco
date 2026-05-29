@@ -39,19 +39,25 @@ const nav = [
 </script>
 
 <template>
-  <div class="shrink-0">
+  <div class="shrink-0 border-r border-r-border px-4">
     <div class="pt-7 pb-4 flex flex-col bg-bg font-body text-fg gap-5">
       <!-- Header -->
       <div class="flex items-center gap-3">
-        <img src="../assets/logo/sulco-logo.svg" alt="sulco" class="w-9 h-9 shrink-0" />
+        <img
+          v-if="false"
+          src="../assets/logo/sulco-logo.svg"
+          alt="sulco"
+          class="w-9 h-9 shrink-0"
+        />
         <div class="flex flex-col">
           <span class="font-display text-[28px] text-fg block">sulco</span>
-          <span class="font-body text-xs text-fg-muted block">sua fonte da verdade</span>
+          <span class="font-body text-xs text-fg-muted block"
+            >sua fonte da verdade</span
+          >
         </div>
       </div>
 
-      <!-- Nav keymap buttons -->
-      <div class="flex gap-2">
+      <div class="flex flex-col gap-2">
         <router-link
           v-for="item in nav"
           :key="item.key"
@@ -68,7 +74,10 @@ const nav = [
             "
             @click="navigate"
           >
-            <span v-html="item.icon" class="flex items-center justify-center shrink-0" />
+            <span
+              v-html="item.icon"
+              class="flex items-center justify-center shrink-0"
+            />
             <span class="text-sm font-body">{{ item.label }}</span>
           </button>
         </router-link>

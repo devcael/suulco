@@ -4,7 +4,8 @@
   html,
   body,
   #app {
-    height: 100%;
+    width: 100svw;
+    height: 100svh;
   }
   body {
     font-family: "Lato", sans-serif;
@@ -111,6 +112,9 @@
 
   --color-interactive: #081f13;
   --color-interactive-fg: #f7faf8;
+
+  --color-border: #e1e9e4;
+  --color-border-strong: #c8d4ce;
 
   --color-overlay: rgba(8, 31, 19, 0.5);
 

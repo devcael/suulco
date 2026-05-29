@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import AppHeader from "./components/AppHeader.vue";
+import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <div class="flex flex-col h-screen overflow-hidden bg-bg px-4">
-    <AppHeader />
+  <div class="flex flex-row h-full overflow-hidden">
+    <Navbar />
     <main class="flex-1 min-h-0 overflow-y-auto">
       <RouterView />
     </main>

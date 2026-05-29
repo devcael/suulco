@@ -12,10 +12,10 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="py-[18px] border-b border-line last:border-b-0 group">
+  <div class="py-item-y border-b border-line last:border-b-0 group">
     <div class="flex items-start justify-between gap-3 mb-2">
       <span
-        class="font-display text-[19px] text-fg flex-1 cursor-text"
+        class="font-body text-fg flex-1 cursor-text"
         @dblclick="emit('edit')"
         >{{ item.text }}</span
       >

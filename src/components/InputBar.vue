@@ -126,7 +126,7 @@ function onKeydown(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="pt-4 pb-9 border-t border-line bg-bg sticky bottom-0 z-10">
+  <div class="p-4 border-t border-line bg-bg sticky bottom-0 z-10">
     <div class="flex items-center gap-2 mb-2.5">
       <div class="flex gap-1.5 flex-1">
         <SegmentedButton

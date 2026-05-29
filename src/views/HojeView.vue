@@ -31,20 +31,16 @@ function onSubmitted(dest: InputDestination) {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-full">
+  <div class="flex flex-col h-full">
     <div class="flex-1">
-      <div class="flex items-baseline gap-3 pt-[22px] pb-1">
-        <span class="font-display text-[13px] text-fg-subtle">{{
-          summaryText
-        }}</span>
-      </div>
-
       <div
         v-if="items.length === 0"
-        class="flex flex-col items-center justify-center text-center pt-20 pb-6 gap-2"
+        class="flex flex-col items-center justify-center text-center pt-20 pb-6 gap-2 h-full"
       >
         <p class="font-display text-2xl text-fg">o dia ainda não tem forma.</p>
-        <p class="font-body text-sm text-fg-subtle">o que você quer que aconteça hoje?</p>
+        <p class="font-body text-sm text-fg-subtle">
+          o que você quer que aconteça hoje?
+        </p>
       </div>
 
       <HojeTaskCard

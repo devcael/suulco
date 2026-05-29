@@ -23,7 +23,9 @@ export function useInbox() {
     } else if (activeFilter.value === "sem-sulco") {
       items.value = await inboxService.getTasksWithoutSulco();
     } else {
-      items.value = await inboxService.getTasksBySulcoId(activeFilter.value as number);
+      items.value = await inboxService.getTasksBySulcoId(
+        activeFilter.value as number,
+      );
     }
   }
 

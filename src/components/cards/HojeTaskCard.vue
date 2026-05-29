@@ -13,7 +13,9 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex items-start gap-4 py-item-y border-b border-line last:border-b-0 group">
+  <div
+    class="flex items-start gap-4 py-item-y border-b border-line last:border-b-0 group p-4 max-w-1/2"
+  >
     <div
       class="w-4.25 h-4.25 border rounded-sm shrink-0 mt-1 cursor-pointer flex items-center justify-center transition-all duration-150 rotate-[1deg]"
       :class="
@@ -42,7 +44,7 @@ const emit = defineEmits<{
 
     <div class="flex-1 flex flex-col gap-1.5">
       <span
-        class="font-display text-2xl text-fg transition-colors duration-200 cursor-text"
+        class="font-body text-xl text-fg transition-colors duration-200 cursor-text tracking-tight"
         :class="
           item.isDone ? 'text-fg-subtle line-through decoration-fg-subtle' : ''
         "

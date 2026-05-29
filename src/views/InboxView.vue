@@ -5,7 +5,6 @@ import { useInbox } from "../composables/useInbox";
 import InputBar from "../components/InputBar.vue";
 import InboxTaskCard from "../components/cards/InboxTaskCard.vue";
 import LinkModal from "../components/modals/LinkModal.vue";
-import EditModal from "../components/modals/EditModal.vue";
 
 const router = useRouter();
 const route = useRoute();
@@ -27,11 +26,14 @@ function onSubmitted(dest: InputDestination) {
     router.push(`/${dest}`);
   }
 }
+
 </script>
 
 <template>
-  <div class="flex flex-col min-h-full">
+  <div class="flex flex-col min-h-full p-4">
     <div class="flex-1">
+      <Tabs />
+      <div class="flex gap-1.5 pt-2 pb-2.5 flex-wrap" />
       <div class="flex gap-1.5 pt-[18px] pb-2.5 flex-wrap">
         <button
           class="text-xs px-2.5 py-0.5 rounded-sm border font-body transition-all duration-150 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer"
@@ -74,12 +76,16 @@ function onSubmitted(dest: InputDestination) {
         v-if="items.length === 0"
         class="flex flex-col items-center justify-center text-center pt-20 pb-6 gap-2"
       >
-        <p class="font-display text-2xl text-fg">inbox limpo.</p>
-        <p class="font-body text-sm text-fg-subtle">nenhuma task esperando por aqui.</p>
+        <p class="font-display text-2xl text-fg">
+          inbox limpo.
+        </p>
+        <p class="font-body text-sm text-fg-subtle">
+          nenhuma task esperando por aqui.
+        </p>
       </div>
 
       <InboxTaskCard
-        v-for="item in [...items].reverse()"
+        v-for="item in items"
         :key="item.id"
         :item="item"
         @move-to-hoje="moveToHoje(item.id)"
@@ -88,7 +94,10 @@ function onSubmitted(dest: InputDestination) {
       />
     </div>
 
-    <InputBar initial-target="inbox" @submitted="onSubmitted" />
+    <InputBar
+      initial-target="inbox"
+      @submitted="onSubmitted"
+    />
   </div>
 
   <LinkModal
