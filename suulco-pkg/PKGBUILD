@@ -1,0 +1,24 @@
+# Mantenedor: Seu Nome <devcaelgoncalves@gmail.com>
+pkgname=suulco-bin
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="App Suulco"
+arch=('x86_64')
+url="https://github.com"
+license=('MIT')
+depends=('fuse2' 'webkit2gtk-4.1' 'libxcrypt-compat')
+options=('!strip')
+
+source=("${pkgname}-${pkgver}.AppImage::https://github.com/releases/download/2026-05-27/suulco_0.1.0_amd64.AppImage"
+        "suulco.desktop")
+sha256sums=('SKIP' 'SKIP')
+
+package() {
+    install -Dm755 "${srcdir}/${pkgname}-${pkgver}.AppImage" "${pkgdir}/usr/bin/suulco"
+    
+    echo -e "#!/bin/bash\nLD_PRELOAD=/usr/lib/libwayland-client.so /usr/bin/suulco \"\$@\"" > "${srcdir}/suulco-launch"
+    install -Dm755 "${srcdir}/suulco-launch" "${pkgdir}/usr/bin/suulco-launch"
+
+    install -Dm644 "${srcdir}/suulco.desktop" "${pkgdir}/usr/share/applications/suulco.desktop"
+
+}

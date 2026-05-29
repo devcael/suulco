@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Suulco
+Comment=Descrição do seu aplicativo
+Exec=suulco-launch
+Icon=suulco
+Type=Application
+Categories=Utility;
+Terminal=false

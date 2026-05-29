@@ -52,3 +52,30 @@ npm run tauri dev
 ```bash
 npm run tauri build
 ```
+
+### Arch EGL_BAD_PARAMETER error
+
+Para corrigir isso precisamos inicialmente
+
+
+```bash
+mkdir -p ~/.local/bin
+mv suulco_0.1.0_amd64.AppImage ~/.local/bin/suulco
+chmod +x ~/.local/bin/suulco
+```
+
+```bash
+nvim ~/.local/share/applications/suulco.desktop
+```
+
+```text
+[Desktop Entry]
+Name=Suulco
+Exec=env LD_PRELOAD=/usr/lib/libwayland-client.so ~/.local/bin/suulco
+Icon=utilities-terminal
+Type=Application
+Categories=Utility;
+Terminal=false
+```
+
+
