@@ -11,7 +11,6 @@ const router = useRouter();
 const route = useRoute();
 const {
   items,
-  summaryText,
   linkModalTaskId,
   editTarget,
   load,
@@ -37,7 +36,9 @@ function onSubmitted(dest: InputDestination) {
         v-if="items.length === 0"
         class="flex flex-col items-center justify-center text-center pt-20 pb-6 gap-2 h-full"
       >
-        <p class="font-display text-2xl text-fg">o dia ainda não tem forma.</p>
+        <p class="font-display text-2xl text-fg">
+          o dia ainda não tem forma.
+        </p>
         <p class="font-body text-sm text-fg-subtle">
           o que você quer que aconteça hoje?
         </p>
@@ -55,7 +56,10 @@ function onSubmitted(dest: InputDestination) {
       />
     </div>
 
-    <InputBar initial-target="hoje" @submitted="onSubmitted" />
+    <InputBar
+      initial-target="hoje"
+      @submitted="onSubmitted"
+    />
   </div>
 
   <LinkModal

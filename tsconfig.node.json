@@ -7,10 +7,6 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "vite.config.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "auto-imports.d.ts",
-    "components.d.ts"
-  ],
+    "vite.config.ts"
+  ]
 }
