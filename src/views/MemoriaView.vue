@@ -33,7 +33,7 @@ function onSubmitted(dest: InputDestination) {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-full">
+  <div class="flex flex-col min-h-full p-4">
     <div class="flex-1">
       <div class="flex gap-1.5 pt-item-y pb-2.5 flex-wrap">
         <button
@@ -64,7 +64,7 @@ function onSubmitted(dest: InputDestination) {
           type="text"
           placeholder="pesquisar..."
           class="w-full bg-transparent border-b border-line outline-none font-body text-sm text-fg py-1.5 placeholder:text-fg-subtle placeholder:italic transition-[border-color] duration-200 focus:border-accent"
-        />
+        >
       </div>
 
       <div
@@ -108,13 +108,20 @@ function onSubmitted(dest: InputDestination) {
           v-if="filteredItems.length === 0"
           class="flex flex-col items-center justify-center text-center pt-16 pb-6 gap-2"
         >
-          <p class="font-display text-2xl text-fg">{{ searchQuery ? "nenhum resultado." : "memória vazia." }}</p>
-          <p class="font-body text-sm text-fg-subtle">{{ searchQuery ? "tente outras palavras." : "o que você quer lembrar?" }}</p>
+          <p class="font-display text-2xl text-fg">
+            {{ searchQuery ? "nenhum resultado." : "memória vazia." }}
+          </p>
+          <p class="font-body text-sm text-fg-subtle">
+            {{ searchQuery ? "tente outras palavras." : "o que você quer lembrar?" }}
+          </p>
         </div>
       </div>
     </div>
 
-    <InputBar initial-target="hoje" @submitted="onSubmitted" />
+    <InputBar
+      initial-target="hoje"
+      @submitted="onSubmitted"
+    />
   </div>
 
   <CategoryModal

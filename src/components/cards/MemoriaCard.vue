@@ -16,9 +16,11 @@ const emit = defineEmits<{
   <div class="py-5 border-b border-line last:border-b-0">
     <div class="mb-2.5">
       <div
-        class="font-display text-lg text-fg-secondary cursor-text text-ellipsis"
+        class="font-body text-lg text-fg-secondary cursor-text text-ellipsis"
         @dblclick="emit('edit')"
-      >{{ item.title}}</div>
+      >
+        {{ item.title }}
+      </div>
     </div>
     <div class="flex items-center justify-between flex-wrap gap-2">
       <span class="text-xs text-fg-subtle">

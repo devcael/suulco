@@ -126,7 +126,7 @@ function onKeydown(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="p-4 border-t border-line bg-bg sticky bottom-0 z-10">
+  <div class="border-t border-line bg-bg sticky bottom-0 z-10">
     <div class="flex items-center gap-2 mb-2.5">
       <div class="flex gap-1.5 flex-1">
         <SegmentedButton
@@ -144,7 +144,11 @@ function onKeydown(e: KeyboardEvent) {
         </SegmentedButton>
       </div>
 
-      <div v-if="showSulcoSelect" class="relative" ref="sulcoDropdownRef">
+      <div
+        v-if="showSulcoSelect"
+        ref="sulcoDropdownRef"
+        class="relative"
+      >
         <button
           class="text-xs px-[11px] py-1 rounded-sm border font-body transition-all duration-150 cursor-pointer bg-transparent text-fg-subtle border-line max-w-[140px] truncate"
           @click.stop="sulcoDropdownOpen = !sulcoDropdownOpen"
@@ -185,10 +189,15 @@ function onKeydown(e: KeyboardEvent) {
 
       <button
         class="w-6 h-6 rounded-sm border border-line bg-transparent text-fg-subtle cursor-pointer flex items-center justify-center shrink-0 transition-all duration-150 hover:border-fg-subtle hover:text-fg"
-        @click="settingsOpen = true"
         title="configurações"
+        @click="settingsOpen = true"
       >
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+        <svg
+          width="11"
+          height="11"
+          viewBox="0 0 11 11"
+          fill="none"
+        >
           <circle
             cx="5.5"
             cy="5.5"
@@ -211,19 +220,24 @@ function onKeydown(e: KeyboardEvent) {
         ref="textareaRef"
         class="flex-1 bg-bg-subtle border border-line rounded-md px-3.5 py-[11px] font-body text-base text-fg outline-none resize-none min-h-[44px] overflow-hidden transition-[border-color] duration-200 focus:border-accent placeholder:text-fg-subtle placeholder:italic placeholder:text-[13px]"
         :value="input"
+        :placeholder="currentPlaceholder"
+        rows="1"
         @input="
           input = ($event.target as HTMLTextAreaElement).value;
           autoResize();
         "
         @keydown="onKeydown"
-        :placeholder="currentPlaceholder"
-        rows="1"
       />
       <button
         class="w-[44px] h-[44px] rounded-md bg-interactive border-none cursor-pointer flex items-center justify-center shrink-0 transition-opacity duration-150 hover:opacity-[0.78] active:scale-[0.97]"
         @click="handleAdd"
       >
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
+          fill="none"
+        >
           <path
             d="M7.5 12.5V2.5M7.5 2.5L3 7M7.5 2.5L12 7"
             stroke="#F0EAE0"
@@ -245,5 +259,8 @@ function onKeydown(e: KeyboardEvent) {
     "
   />
 
-  <SettingsModal v-if="settingsOpen" @close="settingsOpen = false" />
+  <SettingsModal
+    v-if="settingsOpen"
+    @close="settingsOpen = false"
+  />
 </template>

@@ -20,7 +20,10 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="border-b border-line last:border-b-0 group" :class="{ open: isOpen }">
+  <div
+    class="border-b border-line last:border-b-0 group"
+    :class="{ open: isOpen }"
+  >
     <div
       class="flex items-center gap-4 py-[22px] cursor-pointer select-none"
       @click="emit('toggle-open')"
@@ -30,7 +33,7 @@ const emit = defineEmits<{
         :class="isOpen ? 'bg-accent border-accent' : 'bg-transparent'"
       />
       <span
-        class="font-display text-3xl text-fg flex-1 cursor-text"
+        class="font-body text-xl text-fg flex-1 cursor-text"
         @dblclick.stop="emit('edit')"
       >{{ item.text }}</span>
 
@@ -67,24 +70,29 @@ const emit = defineEmits<{
         <textarea
           class="w-full bg-bg-subtle border border-line rounded-md px-3.5 py-3 font-display text-[15px] text-fg resize-none min-h-[76px] outline-none transition-[border-color] duration-200 focus:border-accent placeholder:text-fg-subtle placeholder:italic placeholder:font-body placeholder:text-[13px]"
           :value="definition"
-          @input="emit('update:definition', ($event.target as HTMLTextAreaElement).value)"
-          @blur="emit('save-def')"
           placeholder="o que isso significa pra você? como chegar lá?"
           rows="3"
+          @input="emit('update:definition', ($event.target as HTMLTextAreaElement).value)"
+          @blur="emit('save-def')"
         />
         <div class="flex gap-2 items-center mt-3">
           <input
             class="flex-1 bg-bg-subtle border border-line rounded-md px-3 py-2 font-body text-[13px] text-fg outline-none transition-[border-color] duration-200 focus:border-accent placeholder:text-fg-subtle placeholder:italic placeholder:text-xs"
             :value="taskInput"
+            placeholder="adicionar task vinculada..."
             @input="emit('update:task-input', ($event.target as HTMLInputElement).value)"
             @keydown.enter="emit('add-linked-task')"
-            placeholder="adicionar task vinculada..."
-          />
+          >
           <button
             class="w-8 h-8 rounded-md bg-interactive border-none cursor-pointer flex items-center justify-center shrink-0 transition-opacity duration-150 hover:opacity-[0.78]"
             @click="emit('add-linked-task')"
           >
-            <svg width="12" height="12" viewBox="0 0 15 15" fill="none">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 15 15"
+              fill="none"
+            >
               <path
                 d="M7.5 12.5V2.5M7.5 2.5L3 7M7.5 2.5L12 7"
                 stroke="#F7FAF8"

@@ -36,8 +36,8 @@ function onSubmitted(dest: InputDestination) {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-full">
-    <div class="flex-1 pt-1.5 overflow-x-hidden">
+  <div class="flex flex-col min-h-full p-4">
+    <div class="flex-1 pt-1.5 overflow-x-hidden p-2">
       <p
         v-if="items.length === 0"
         class="font-display italic text-fg-subtle text-xl py-14 pb-6"
@@ -109,7 +109,10 @@ function onSubmitted(dest: InputDestination) {
       </template>
     </div>
 
-    <InputBar initial-target="sulco" @submitted="onSubmitted" />
+    <InputBar
+      initial-target="sulco"
+      @submitted="onSubmitted"
+    />
   </div>
 
   <ArchiveModal

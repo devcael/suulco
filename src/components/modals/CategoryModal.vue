@@ -48,7 +48,9 @@ onMounted(load);
       class="bg-bg w-full max-w-[580px] rounded-t-lg px-8 pt-7 pb-10 max-h-[70vh] overflow-y-auto"
       @click.stop
     >
-      <div class="font-display text-[20px] text-fg mb-1.5">categorizar</div>
+      <div class="font-display text-[20px] text-fg mb-1.5">
+        categorizar
+      </div>
       <div class="text-[12px] text-fg-subtle mb-[22px] ">
         escolha ou crie uma categoria
       </div>
@@ -70,11 +72,11 @@ onMounted(load);
 
       <div class="mt-5">
         <input
+          v-model="newCatInput"
           class="w-full bg-bg-subtle border border-line rounded-md px-3.5 py-[11px] font-display text-lg text-fg outline-none mb-3 transition-[border-color] duration-200 focus:border-accent placeholder:text-fg-subtle placeholder:italic placeholder:text-base placeholder:font-body"
           placeholder="nova categoria..."
-          v-model="newCatInput"
           @keydown.enter="createAndApply"
-        />
+        >
         <button
           class="w-full py-3 rounded-md border-none bg-interactive text-interactive-fg font-body text-[12px] cursor-pointer mb-2"
           @click="createAndApply"
